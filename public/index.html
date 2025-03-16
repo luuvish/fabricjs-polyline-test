@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric.js Polyline 테스트</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .canvas-section {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .log-section {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        #canvas-container {
+            margin-top: 20px;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        #log-messages {
+            height: 600px;
+            overflow-y: auto;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas-section">
+            <div class="controls">
+                <button id="drawMode">그리기 모드</button>
+                <button id="selectMode">선택 모드</button>
+                <button id="clear">초기화</button>
+            </div>
+            <div id="canvas-container">
+                <canvas id="canvas" width="800" height="600"></canvas>
+            </div>
+        </div>
+        <div class="log-section">
+            <h3>로그 메시지</h3>
+            <div id="log-messages"></div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html> 
