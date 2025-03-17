@@ -109,12 +109,12 @@ canvas.on('mouse:wheel', function(opt) {
 // 다양한 폴리라인 미리 그리기 함수
 function drawSamplePolylines() {
     // 1. 가로 직선
-    const horizontalLine = new fabric.Polyline([
-        { x: 100, y: 100 },
-        { x: 300, y: 100 }
-    ], {
+    const horizontalLine = new fabric.Line(
+      [100, 100, 300, 100 ]
+    , {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -124,12 +124,12 @@ function drawSamplePolylines() {
     });
     
     // 2. 세로 직선
-    const verticalLine = new fabric.Polyline([
-        { x: 400, y: 50 },
-        { x: 400, y: 250 }
-    ], {
+    const verticalLine = new fabric.Line(
+        [400, 50, 400, 250],
+    {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -148,6 +148,7 @@ function drawSamplePolylines() {
     ], {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -167,6 +168,7 @@ function drawSamplePolylines() {
     ], {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -184,6 +186,7 @@ function drawSamplePolylines() {
     ], {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -202,6 +205,7 @@ function drawSamplePolylines() {
     ], {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -226,6 +230,7 @@ function drawSamplePolylines() {
     ], {
         stroke: 'blue',
         strokeWidth: 2,
+        padding: 10,
         fill: 'transparent',
         selectable: true,
         hoverCursor: 'pointer',
@@ -246,6 +251,7 @@ function drawSamplePolylines() {
         {
             stroke: 'blue',
             strokeWidth: 2,
+            padding: 10,
             fill: 'transparent',
             selectable: true,
             hoverCursor: 'pointer',
@@ -266,6 +272,7 @@ function drawSamplePolylines() {
         {
             stroke: 'blue',
             strokeWidth: 2,
+            padding: 10,
             fill: 'transparent',
             selectable: true,
             hoverCursor: 'pointer',
@@ -303,7 +310,7 @@ window.addEventListener('load', function() {
     
     // 기본적으로 선택 모드로 시작
     canvas.selection = true;
-    canvas.targetFindTolerance = 6;
+    canvas.targetFindTolerance = 10;
     canvas.getObjects().forEach(obj => obj.selectable = true);
     
     // 초기 줌 레벨 표시 설정
@@ -325,7 +332,7 @@ drawModeBtn.addEventListener('click', function() {
 // 선택 모드 활성화
 selectModeBtn.addEventListener('click', function() {
     canvas.selection = true;
-    canvas.targetFindTolerance = 6;  // 선택 영역의 허용 범위 (픽셀) perPixelTargetFind 옵션과 함께 사용
+    //canvas.targetFindTolerance = 6;  // 선택 영역의 허용 범위 (픽셀) perPixelTargetFind 옵션과 함께 사용
     isDrawing = false;
     points = [];
     canvas.getObjects().forEach(obj => obj.selectable = true);
