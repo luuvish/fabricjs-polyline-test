@@ -24,9 +24,13 @@
         }
         #canvas-container {
             margin-top: 20px;
+            position: relative;
         }
         .controls {
             margin-bottom: 20px;
+        }
+        .controls button {
+            margin-right: 5px;
         }
         #log-messages {
             height: 600px;
@@ -41,6 +45,21 @@
             padding: 5px;
             border-bottom: 1px solid #ddd;
         }
+        .zoom-controls {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        #zoom-level {
+            margin-left: 10px;
+            font-weight: bold;
+            min-width: 60px;
+        }
+        .zoom-info {
+            margin-left: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +69,13 @@
                 <button id="drawMode">그리기 모드</button>
                 <button id="selectMode">선택 모드</button>
                 <button id="clear">초기화</button>
+                <div class="zoom-controls">
+                    <button id="zoomIn">확대(+)</button>
+                    <button id="zoomOut">축소(-)</button>
+                    <button id="resetZoom">원래 크기</button>
+                    <span id="zoom-level">100%</span>
+                    <span class="zoom-info">(스페이스바 + 드래그: 이동, 마우스 휠: 줌)</span>
+                </div>
             </div>
             <div id="canvas-container">
                 <canvas id="canvas" width="800" height="600"></canvas>
